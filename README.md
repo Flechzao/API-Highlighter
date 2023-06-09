@@ -26,13 +26,18 @@ PS:需要正确配置jython环境才能使用此插件。
 5. 当拦截或查看请求时，插件会将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示，并显示注释。
 
 示例
+
 目标接口：GET /api/query/identity/detail
 导入接口
-<img width="1467" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/226a592b-3897-4d79-ab80-ba9b538037b2">
-<img width="1466" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/f0ee62d6-2d82-433f-bdf1-8851b5580270">
+<img width="1473" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/37b14d1f-28c9-4a4c-9e39-010fbcfb27c0">
+
 查看高亮情况
 <img width="1473" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/7fc9486b-7a9a-4644-a6a5-a5270fd7b5d4">
+
 修改测试情况和备注
+<img width="1474" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/858e29b8-ee7d-4be4-95a0-01a4ed005aec">
+
+再次查看高亮情况
 <img width="1466" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/01d5cda8-d2f1-49aa-8c38-428f8f875352">
 
 ## 特点
