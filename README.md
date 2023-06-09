@@ -4,26 +4,36 @@ This is a Burp Suite plugin for highlighting specific API requests and allowing 
 
 ## 背景
 
-最近公司需要调整了测试模式，需要根据接口表进行测试，如果常规的边测边看太浪费时间了，故开发了这个插件，可以边测边看当前接口是否为目标，并实时标记功能点位置。
+最近公司调整了测试模式，需要根据接口表进行测试，如果常规的边测边看接口表太浪费时间了，故开发了这个插件，可以直接看到当前接口是否为目标接口，并实时标记功能点位置。
 
 ## 安装
 
 要安装插件，请按照以下步骤操作：
-（需要正确配置jython才能使用此插件）
 1. 从本页面下载插件的最新版本。
 2. 在Burp Suite中，导航到`Extender`标签。
 3. 点击`Add`，然后选择下载的插件文件。
 4. 此时插件应已安装并激活。
+PS:需要正确配置jython环境才能使用此插件。
 
 ## 使用方法
 
 安装插件后，您可以按照以下步骤使用它：
 
-1. 在Burp Suite中，导航到"API-Highlighter"标签。
-2. 要导入API，请将它们粘贴到"Batch import APls"文本区域中，然后单击"Import APIs"按钮。
+1. 在Burp Suite中，选择"API-Highlighter"标签。
+2. 要导入API，将它们粘贴到"Batch import APls"文本区域中，然后单击"Import APIs"按钮。
 3. 导入的API将显示在下方的表格中。您可以为每个API添加注释和设置测试状态（Y/N）。
 4. 要删除API，请在表格中选择它，然后单击“Remove API”按钮。
 5. 当拦截或查看请求时，插件会将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示，并显示注释。
+
+示例
+目标接口：GET /api/query/identity/detail
+导入接口
+<img width="1467" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/226a592b-3897-4d79-ab80-ba9b538037b2">
+<img width="1466" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/f0ee62d6-2d82-433f-bdf1-8851b5580270">
+查看高亮情况
+<img width="1473" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/7fc9486b-7a9a-4644-a6a5-a5270fd7b5d4">
+修改测试情况和备注
+<img width="1466" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/01d5cda8-d2f1-49aa-8c38-428f8f875352">
 
 ## 特点
 
