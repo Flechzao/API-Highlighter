@@ -34,7 +34,7 @@ This is a Burp Suite plugin for highlighting specific API requests and allowing 
 
 ## 作者
 
-pp
+flechazo
 
 ## 贡献
 
