@@ -2,6 +2,10 @@
 
 This is a Burp Suite plugin for highlighting specific API requests and allowing users to batch import, remove APIs, as well as add comments and test statuses.
 
+## 背景
+
+最近公司需要调整了测试模式，需要根据接口表进行测试，如果常规的边测边看太浪费时间了，故开发了这个插件，可以边测边看当前接口是否为目标，并实时标记功能点位置。
+
 ## 安装
 
 要安装插件，请按照以下步骤操作：
