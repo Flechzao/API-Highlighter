@@ -27,7 +27,7 @@ PS:需要正确配置jython环境才能使用此插件。
 6. 若要将所有已测试的 API 移动到列表顶部，单击 "Move Tested to Top" 按钮。
 7. 勾选 "Enable Precise Match" 选项可启用精确匹配功能。当启用精确匹配时，只有完全匹配的 URL 才会被高亮显示。禁用精确匹配时，只要包含相应 API 的 URL 都会被高亮显示。使用精确匹配功能可以方便地定位到特定的 API 以进行更有针对性的测试。
 
-单词解释
+## 单词解释
 
 Batch import APIs：api文本框
 
@@ -43,7 +43,7 @@ Move Tested to Top：将已测试的api置顶
 
 Find API：查找api
 
-示例
+## 示例
 
 目标接口：GET /api/query/identity/detail
 导入接口
