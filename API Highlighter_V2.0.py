@@ -149,11 +149,15 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
 
     def toggle_tested(self, event):
         selected_rows = self._table.getSelectedRows()
-        if not selected_rows:
-            return
-        for i in selected_rows:
-            tested = self._table_model.getValueAt(i, 3)
-            self._table_model.setValueAt(not tested, i, 3)
+
+        for row in selected_rows:
+            tested = self._table_model.getValueAt(row, 3)
+            if not tested:
+                self._table_model.setValueAt(True, row, 3)
+                self._table_model.setValueAt("", row, 2)
+            else:
+                self._table_model.setValueAt(False, row, 3)
+                self._table_model.setValueAt("Under Test", row, 2)
 
     def move_tested_to_top(self, event):
         tested_rows = []
