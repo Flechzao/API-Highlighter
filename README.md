@@ -21,15 +21,27 @@ PS:需要正确配置jython环境才能使用此插件。
 
 1. 在Burp Suite中，选择"API-Highlighter"标签。
 2. 要导入API，将它们粘贴到"Batch import APls"文本区域中，然后单击"Import APIs"按钮。
-3. 导入的API将显示在下方的表格中。您可以为每个API添加注释和设置测试状态（Y/N）。
+3. 导入的API将显示在下方的表格中。您可以为每个API添加注释和设置测试状态，若要标记 API 为已测试，请选中 API 并单击 "Toggle Tested" 按钮。已测试的 API 将被标记为绿色，未测试的 API 将被标记为黄色。。
 4. 要删除API，请在表格中选择它，然后单击“Remove API”按钮。
 5. 当拦截或查看请求时，插件会将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示，并显示注释。
+6. 若要将所有已测试的 API 移动到列表顶部，单击 "Move Tested to Top" 按钮。
+7. 勾选 "Enable Precise Match" 选项可启用精确匹配功能。当启用精确匹配时，只有完全匹配的 URL 才会被高亮显示。禁用精确匹配时，只要包含相应 API 的 URL 都会被高亮显示。使用精确匹配功能可以方便地定位到特定的 API 以进行更有针对性的测试。
+
+单词解释
+
+Batch import APIs：api文本框
+Import APIs：批量导入api
+Enable Precise Match：开启精确匹配
+Remove API：删除api
+Toggle Tested：改变测试状态
+Move Tested to Top：将已测试的api置顶
+Find API：查找api
 
 示例
 
 目标接口：GET /api/query/identity/detail
 导入接口
-<img width="1473" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/37b14d1f-28c9-4a4c-9e39-010fbcfb27c0">
+<img width="1635" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/90523a1b-ffa7-440a-a942-763d9b85707e">
 
 查看高亮情况
 <img width="1473" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/7fc9486b-7a9a-4644-a6a5-a5270fd7b5d4">
