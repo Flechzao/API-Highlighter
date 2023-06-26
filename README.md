@@ -30,11 +30,17 @@ PS:需要正确配置jython环境才能使用此插件。
 单词解释
 
 Batch import APIs：api文本框
+
 Import APIs：批量导入api
+
 Enable Precise Match：开启精确匹配
+
 Remove API：删除api
+
 Toggle Tested：改变测试状态
+
 Move Tested to Top：将已测试的api置顶
+
 Find API：查找api
 
 示例
