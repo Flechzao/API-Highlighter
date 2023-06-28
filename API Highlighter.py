@@ -8,6 +8,7 @@ from java.awt import Component, GridLayout
 from java.awt.event import ActionListener
 
 info = '''author:flechazo
+version:V2.0
 https://github.com/Flechzao/API-Highlighter'''
 print(info)
 
