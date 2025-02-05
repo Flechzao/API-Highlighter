@@ -24,16 +24,24 @@ PS:需要正确配置jython环境才能使用此插件。
 3. 导入的API将显示在下方的表格中。
 4. 当拦截或查看请求时，插件会将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示，并显示注释，标记为存在漏洞的API将被高亮显示为红色，并显示"Vulnerable"注释。
 5. 设置测试状态，已测试的 API 将被标记为绿色，未测试的 API 将被标记为黄色。若要标记 API 为已测试，有如下两种方法：
-   
-  ○ 方法一：选中 API 并单击 "切换测试状态" 按钮。
-  
-  ○ 方法二：在Proxy - HTTP history 界面中选中被标记的接口，右键选中Exrensions-API Highlighter -修改测试状态
-  
+- **方法一**：选中 API 并单击 "切换测试状态" 按钮。
+![ae0b952da5d202b43f3583875dd7c26](https://github.com/user-attachments/assets/abd78026-168e-43d6-90c5-dc2a909cf21d)
+- **方法二**：在Proxy - HTTP history 界面中选中被标记的接口，右键选中Exrensions-API Highlighter -修改测试状态
 6. 删除功能：要删除API，请在表格中选择它，然后单击“删除API”按钮。（支持多选）
+  ![039d454a57720861509847c383c8f73](https://github.com/user-attachments/assets/c54222d9-ab73-44d9-8fe5-3559caf18934)
+
 7. 置顶功能：若要将所有已测试的 API 移动到列表顶部，单击 "将已测试移至顶部" 按钮。
+![117d232cc5e19ac42a84c3ac529cfac](https://github.com/user-attachments/assets/5adc8aee-5bda-4ebc-8590-50bd2eb58979)
 单击后已测试的接口会置顶
+![d409e0632942ea7a8c3b97ec83d4da4](https://github.com/user-attachments/assets/70b4dd49-ab1f-4362-b1d8-02a84c9b62c1)
 8. 查找功能：若要查找特定的API，可以在搜索框中输入相关的API，然后点击"Find API"按钮。它将在表格中查找和高亮显示匹配搜索文本的API。
+![335c0b036934dddf825decc85691a3d](https://github.com/user-attachments/assets/f5a5b5f2-63b9-45f4-930f-74fe999b554e)
 9. 检查历史接口信息：勾选后，就会遍历当前HTTP history的接口信息，如果命中会打上历史接口检查的备注。
+![513e241e61ffa5ad9ce52e73c973680](https://github.com/user-attachments/assets/6258371a-fd08-4ea9-93bd-a1053948955d)
+
+检查结果如下：
+![7d53caa6b69470eb98f62fa624ce71b](https://github.com/user-attachments/assets/ac277aac-e9b9-4100-ba14-5213bc0a2bd3)
+
 10. 精确匹配功能：当启用精确匹配时，只有完全匹配的 URL 才会被高亮显示。禁用精确匹配时，只要包含相应 API 的 URL 都会被高亮显示。使用精确匹配功能可以方便地定位到特定的 API 以进行更有针对性的测试。
 11. 检查完整数据包功能：如果需要检查整个HTTP请求（包括headers和body）是否包含API，可以勾选"检查完整数据包"选项，插件将在整个请求中查找API，不仅仅是URL。
 12. 正则功能：可以使用正则表达式查找API，主要是处理特定模式的API。例如当API中包含通配符{id}、{databaseid}，可以使用正则表达式来匹配这些API。
@@ -42,8 +50,10 @@ PS:需要正确配置jython环境才能使用此插件。
 ### 普通示例 
 大部分接口需求只涉及这部分，因此只需要了解这部分就行
 1.例如我们想检查“/admission_pku/register.php”这个接口，导入到API表格中（无需勾选任意选项）
+![2d72ddbc0c0b851ceeda42718dad98c](https://github.com/user-attachments/assets/9c292806-82d1-454a-a16c-b7ab43624802)
 
 2.正常测试抓取流量，如果探测到接口就会标黄，如下图所示：
+![edcd3ed572cddc20254e3529579e446](https://github.com/user-attachments/assets/786a4ac0-7309-4e15-9fcd-cdb567abff47)
 
 ## 版本更新记录
 
