@@ -16,80 +16,69 @@ This is a Burp Suite plugin for highlighting specific API requests and allowing 
 PS:需要正确配置jython环境才能使用此插件。
 
 ## 使用方法
-### 基础功能
+
 安装插件后，您可以按照以下步骤使用它：
+
 1. 在Burp Suite中，选择"API-Highlighter"标签。
-2. 要导入API，将它们粘贴到"批量导入API"文本区域中，然后单击"导入API"按钮。
-![image](https://github.com/user-attachments/assets/47933745-7a8f-4ec9-bdb5-0d6ed875be53)
-3. 导入的API将显示在下方的表格中。
-4. 当拦截或查看请求时，插件会将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示，并显示注释，标记为存在漏洞的API将被高亮显示为红色，并显示"Vulnerable"注释。
-5. 设置测试状态，已测试的 API 将被标记为绿色，未测试的 API 将被标记为黄色。若要标记 API 为已测试，有如下两种方法：
-- **方法一**：选中 API 并单击 "切换测试状态" 按钮。
-![ae0b952da5d202b43f3583875dd7c26](https://github.com/user-attachments/assets/abd78026-168e-43d6-90c5-dc2a909cf21d)
-- **方法二**：在Proxy - HTTP history 界面中选中被标记的接口，右键选中Exrensions-API Highlighter -修改测试状态
-6. 删除功能：要删除API，请在表格中选择它，然后单击“删除API”按钮。（支持多选）
-  ![039d454a57720861509847c383c8f73](https://github.com/user-attachments/assets/c54222d9-ab73-44d9-8fe5-3559caf18934)
+2. 要导入API，将它们粘贴到"Batch import APls"文本区域中，然后单击"Import APIs"按钮。
+3. 导入的API将显示在下方的表格中。您可以为每个API添加注释和设置测试状态，若要标记 API 为已测试，请选中 API 并单击 "Toggle Tested" 按钮。已测试的 API 将被标记为绿色，未测试的 API 将被标记为黄色。。
+4. 要删除API，请在表格中选择它，然后单击“Remove API”按钮。
+5. 当拦截或查看请求时，插件会将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示，并显示注释。
+6. 若要将所有已测试的 API 移动到列表顶部，单击 "Move Tested to Top" 按钮。
+7. 勾选 "Enable Precise Match" 选项可启用精确匹配功能。当启用精确匹配时，只有完全匹配的 URL 才会被高亮显示。禁用精确匹配时，只要包含相应 API 的 URL 都会被高亮显示。使用精确匹配功能可以方便地定位到特定的 API 以进行更有针对性的测试。
 
-7. 置顶功能：若要将所有已测试的 API 移动到列表顶部，单击 "将已测试移至顶部" 按钮。
-![117d232cc5e19ac42a84c3ac529cfac](https://github.com/user-attachments/assets/5adc8aee-5bda-4ebc-8590-50bd2eb58979)
-单击后已测试的接口会置顶
-![d409e0632942ea7a8c3b97ec83d4da4](https://github.com/user-attachments/assets/70b4dd49-ab1f-4362-b1d8-02a84c9b62c1)
-8. 查找功能：若要查找特定的API，可以在搜索框中输入相关的API，然后点击"Find API"按钮。它将在表格中查找和高亮显示匹配搜索文本的API。
-![335c0b036934dddf825decc85691a3d](https://github.com/user-attachments/assets/f5a5b5f2-63b9-45f4-930f-74fe999b554e)
-9. 检查历史接口信息：勾选后，就会遍历当前HTTP history的接口信息，如果命中会打上历史接口检查的备注。
-![513e241e61ffa5ad9ce52e73c973680](https://github.com/user-attachments/assets/6258371a-fd08-4ea9-93bd-a1053948955d)
+## 单词解释
 
-检查结果如下：
-![7d53caa6b69470eb98f62fa624ce71b](https://github.com/user-attachments/assets/ac277aac-e9b9-4100-ba14-5213bc0a2bd3)
+Batch import APIs：api文本框
 
-10. 精确匹配功能：当启用精确匹配时，只有完全匹配的 URL 才会被高亮显示。禁用精确匹配时，只要包含相应 API 的 URL 都会被高亮显示。使用精确匹配功能可以方便地定位到特定的 API 以进行更有针对性的测试。
-11. 检查完整数据包功能：如果需要检查整个HTTP请求（包括headers和body）是否包含API，可以勾选"检查完整数据包"选项，插件将在整个请求中查找API，不仅仅是URL。
-12. 正则功能：可以使用正则表达式查找API，主要是处理特定模式的API。例如当API中包含通配符{id}、{databaseid}，可以使用正则表达式来匹配这些API。
-13. URL编码功能：启用此选项后，插件就会从在编码的URL中查找API。（若要开启，可以在utils.py文件开启URL_encode函数）
+Import APIs：批量导入api
 
-### 普通示例 
-大部分接口需求只涉及这部分，因此只需要了解这部分就行
-1.例如我们想检查“/admission_pku/register.php”这个接口，导入到API表格中（无需勾选任意选项）
-![2d72ddbc0c0b851ceeda42718dad98c](https://github.com/user-attachments/assets/9c292806-82d1-454a-a16c-b7ab43624802)
+Enable Precise Match：开启精确匹配
 
-2.正常测试抓取流量，如果探测到接口就会标黄，如下图所示：
-![edcd3ed572cddc20254e3529579e446](https://github.com/user-attachments/assets/786a4ac0-7309-4e15-9fcd-cdb567abff47)
+Remove API：删除api
 
-## 版本更新记录
+Toggle Tested：改变测试状态
 
-### v1.0.0
-- 初始版本发布。
+Move Tested to Top：将已测试的api置顶
 
-### v2.0.0
-#### 新增功能
-- **新增正则检查功能**
-- **新增URL编码功能**
-- **新增API 历史记录功能**
-- **新增API 历史记录功能**
+Find API：查找api
 
-### v3.0.0
-#### 新增功能
-- **补充URL编码:** 增加了对更多URL编码的支持，现在支持除了字母、数字以为的特殊字符的URL编码。
-- **补充正则检查规则:** 增加了更多正则检查规则，现在支持{XXXX}均可以识别为\d+，并提高了正则匹配的准确性。
-- **漏洞数据增加:** 添加了对越权、未授权、普通等漏洞类型的支持。
-- **自动补充HTTP Method:** 当接口信息不完整时，自动补充HTTP方法。
-- **自动添加scope信息:** 捕获接口信息后，支持从接口列表点击直接跳转到HTTP历史记录中的对应接口。
-- **URL模糊匹配:** 增加了URL模糊匹配功能，改进了接口匹配逻辑，支持接口名称不区分大小写。
-- **新增敏感信息检查:** 增加了对HaE规则的支持，自动识别流量中的敏感信息。
+## 示例
 
-#### 修复的bug
-- **检查API历史时的性能问题:** 修复了使用“检查API历史记录”时该功能卡死的问题，通过添加多线程支持，提升了性能。
-- **正则接口标记问题:** 修复了正则处理后部分接口不能识别的问题。
-- **API表格问题:** 修复了中文输入报错问题。
-- **URL编码和正则编码冲突:** 修复了同时启用URL编码和正则编码时，将\d+编码处理掉的问题，添加保护模式去防护。
-- **domain被覆盖:** 修复了记录的接口域名被覆盖的问题。
-  
-### v3.1.0
-#### 新增功能
-- **新增未授权检查:** 增加对未授权漏洞的巡检。
-  
-#### 已知问题
-- **添加scope在最新的burpsuite场景下不能使用:** 添加scope在最新的burpsuite场景下不能使用。
+目标接口：GET /api/query/identity/detail
+导入接口
+<img width="1635" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/90523a1b-ffa7-440a-a942-763d9b85707e">
+
+查看高亮情况
+<img width="1473" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/7fc9486b-7a9a-4644-a6a5-a5270fd7b5d4">
+
+修改测试情况和备注
+<img width="1474" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/858e29b8-ee7d-4be4-95a0-01a4ed005aec">
+
+再次查看高亮情况
+<img width="1466" alt="image" src="https://github.com/Flechzao/API-Highlighter/assets/66863063/01d5cda8-d2f1-49aa-8c38-428f8f875352">
+
+## 特点
+
+以下是此插件提供的一些关键功能：
+
+- 为每个API添加注释和设置测试状态
+- 将包含指定API的请求以绿色（已测试）或黄色（未测试）高亮显示
+
+## 迭代情况 
+
+|功能/缺陷修复|需求分析|功能设计实现|进度|期望版本|
+|-|-|-|-|-|
+|批量移除|无法删除|添加一个"remove apis"按钮，单击可删除，并添加批量选中功能|success|v1.1|
+|快速改变测试状需要|快速改变测试状态，不需要像V1.0时的手动修改测试状态|添加一个"Toggle Tested"按钮，单击改变测试状态|success|v1.1|
+|已测试选项置顶|更加直观|添加"Move Tested to Top"按钮，可以置顶当前已测试的API接口|success|v1.1|
+|搜索框|大量接口测试的时候看不到|新增一个“find api”搜索框|success|v1.2|
+|fix：搜索后能自动跳转对应的api|||success|v1.3|
+|fix：修改测试状态后备注仍然未变更|||success|v1.3|
+|fix：直接勾选test列，更改测试状态||功能实现失败，后续参考autorize的实现方式|developing|v1.3|
+|备注同步|修改history时候，插件页的备注也会直接改变||failed|v 1.4|
+|导出csv|可以导出测试记录|想调用logger中的“exprot as csv”功能|failed|V2|
+|精确匹配/模糊查询|部分接口信息只有一个特定函数，因此需要设计一个功能来覆盖这种情况|当前版本可以实现一定的模糊查询，需要进一步优化。需要设计一个按钮，“是否开启精准匹配”，开启按钮后，当匹配host头和api完全符合才会标记|success|V2|
 
 ## 作者
 
